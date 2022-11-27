@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@shared/*": ["packages/shared/src/lib/*"],
+      "@admin-app/*": ["packages/admin-app/src/*"],
+      "@login-app/*": ["packages/login-app/src/*"],
+      "@products/*": ["packages/products/src/*"]
+    }
+  },
+  "files": [],
+  "include": []
+}

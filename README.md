@@ -1,22 +1,12 @@
 # Microlorians
 
+Using NX by NRWL, microapps can use shared components across the monorepo.
 
 ### Startup
 
-`yarn`
-`yarn start`
+`cd ops-admin`
+`npm i`
+`npm nx serve admin-app`
 
-Then open `localhost:3001` (HOST)
-and
-`localhost:3002` (second application)
+Then open `localhost:4200`
 
-
-### Screenshots
-
-App 1
-
-![App 1](/screenshots/App1.png?raw=true "App 1")
-
-App 2
-
-![App 2](/screenshots/App2.png?raw=true "App 2")
