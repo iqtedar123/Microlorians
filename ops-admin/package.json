@@ -46,7 +46,9 @@
   "dependencies": {
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
+    "@nxtend/firebase": "^12.1.0",
     "core-js": "^3.6.5",
+    "firebase": "^9.14.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.4.1",
