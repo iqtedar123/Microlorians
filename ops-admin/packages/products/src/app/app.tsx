@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
-import NxWelcome from './nx-welcome';
+import ProductsGrid from '@products/components/ProductsGrid/ProductsGrid';
 
 const StyledApp = styled.div`
   // Your style here
 `;
 
-export const Products = () =>  {
+export const Products = () => {
   return (
     <StyledApp>
-      <NxWelcome title="products" />
+      <ProductsGrid />
     </StyledApp>
   );
-}
+};
