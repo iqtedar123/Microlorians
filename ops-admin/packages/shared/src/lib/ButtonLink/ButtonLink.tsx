@@ -13,18 +13,19 @@ const styles = {
     paddingRight: ' 1.5rem',
     backgroundColor: 'rgb(50, 186, 246)',
     color: 'white',
+    textDecoration: 'none',
   }),
 };
 interface Props {
   label: string;
-  onClick: () => void;
+  href: string;
 }
-const Button = ({ label, onClick }: Props) => {
+const ButtonLink = ({ label, href }: Props) => {
   return (
-    <button css={styles.button} onClick={onClick}>
+    <a css={styles.button} href={href}>
       {label}
-    </button>
+    </a>
   );
 };
 
-export default Button;
+export default ButtonLink;

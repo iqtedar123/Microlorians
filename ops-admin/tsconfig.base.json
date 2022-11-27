@@ -13,10 +13,10 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@shared/*": ["packages/shared/src/lib/*"],
       "@admin-app/*": ["packages/admin-app/src/*"],
       "@login-app/*": ["packages/login-app/src/*"],
-      "@products/*": ["packages/products/src/*"]
+      "@products/*": ["packages/products/src/*"],
+      "@shared/*": ["packages/shared/src/lib/*"]
     }
   },
   "files": [],
