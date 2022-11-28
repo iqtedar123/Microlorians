@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import ProductsGrid from '@products/components/ProductsGrid/ProductsGrid';
+import ProductsGrid from '@products/app/components/ProductsGrid/ProductsGrid';
 
 const StyledApp = styled.div`
   // Your style here

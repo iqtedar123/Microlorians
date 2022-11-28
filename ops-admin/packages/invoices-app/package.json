@@ -1,5 +1,5 @@
 {
-  "name": "admin-app",
+  "name": "invoices-app",
   "version": "0.0.0",
   "main": "dist/index.js",
   "devDependencies": {},
@@ -7,8 +7,6 @@
     "build": "tsc index.ts --outDir dist"
   },
   "dependencies": {
-    "login-app": "*",
-    "products": "*",
-    "invoices-app": "*"
+    "shared": "*"
   }
 }

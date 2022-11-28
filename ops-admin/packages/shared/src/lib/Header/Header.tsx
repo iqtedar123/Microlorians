@@ -11,6 +11,9 @@ const styles = {
     height: 75,
     width: '100%',
     paddingRight: 8,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
+    marginBottom: 16,
   }),
   circle: css({
     borderRadius: '50%',
@@ -49,6 +52,16 @@ const navItems = [
     name: 'Home',
     url: '/',
     key: 'Home',
+  },
+  {
+    name: 'Invoices',
+    url: '/invoices',
+    key: 'Invoices',
+  },
+  {
+    name: 'Products',
+    url: '/products',
+    key: 'Products',
   },
 ];
 

@@ -54,7 +54,8 @@
   },
   "workspaces": [
     "packages/*",
-    "!(packages/login-app)"
+    "!(packages/login-app)",
+    "!(packages/invoices-app)"
   ],
   "dependencies": {
     "@emotion/react": "11.10.4",

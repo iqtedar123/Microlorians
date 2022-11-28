@@ -1,5 +1,7 @@
 import { LoginApp } from 'login-app';
 import { Products } from 'products';
+import { Invoices } from 'invoices-app';
+
 import Header from '@shared/Header/Header';
 import { initializeApp } from 'firebase/app';
 
@@ -19,9 +21,15 @@ const config = {
 
 initializeApp(config);
 
+const styles = {
+  wrapper: css({
+    paddingRight: 8,
+  }),
+};
+
 export function App() {
   return (
-    <>
+    <div css={styles.wrapper}>
       <Global
         styles={css`
           body {
@@ -35,8 +43,9 @@ export function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginApp />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/invoices" element={<Invoices />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

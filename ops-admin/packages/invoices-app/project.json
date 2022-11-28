@@ -1,7 +1,7 @@
 {
-  "name": "invoices",
+  "name": "invoices-app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/invoices/src",
+  "sourceRoot": "packages/invoices-app/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,15 +10,15 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/packages/invoices",
-        "index": "packages/invoices/src/index.html",
+        "outputPath": "dist/packages/invoices-app",
+        "index": "packages/invoices-app/src/index.html",
         "baseHref": "/",
-        "main": "packages/invoices/src/main.tsx",
-        "polyfills": "packages/invoices/src/polyfills.ts",
-        "tsConfig": "packages/invoices/tsconfig.app.json",
+        "main": "packages/invoices-app/src/main.tsx",
+        "polyfills": "packages/invoices-app/src/polyfills.ts",
+        "tsConfig": "packages/invoices-app/tsconfig.app.json",
         "assets": [
-          "packages/invoices/src/favicon.ico",
-          "packages/invoices/src/assets"
+          "packages/invoices-app/src/favicon.ico",
+          "packages/invoices-app/src/assets"
         ],
         "styles": [],
         "scripts": [],
@@ -34,8 +34,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "packages/invoices/src/environments/environment.ts",
-              "with": "packages/invoices/src/environments/environment.prod.ts"
+              "replace": "packages/invoices-app/src/environments/environment.ts",
+              "with": "packages/invoices-app/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -51,15 +51,15 @@
       "executor": "@nrwl/webpack:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "invoices:build",
+        "buildTarget": "invoices-app:build",
         "hmr": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "invoices:build:development"
+          "buildTarget": "invoices-app:build:development"
         },
         "production": {
-          "buildTarget": "invoices:build:production",
+          "buildTarget": "invoices-app:build:production",
           "hmr": false
         }
       }
@@ -68,14 +68,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/invoices/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["packages/invoices-app/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/invoices/jest.config.ts",
+        "jestConfig": "packages/invoices-app/jest.config.ts",
         "passWithNoTests": true
       }
     }

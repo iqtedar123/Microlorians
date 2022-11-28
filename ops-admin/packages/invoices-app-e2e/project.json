@@ -1,19 +1,19 @@
 {
-  "name": "invoices-e2e",
+  "name": "invoices-app-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/invoices-e2e/src",
+  "sourceRoot": "packages/invoices-app-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "packages/invoices-e2e/cypress.config.ts",
-        "devServerTarget": "invoices:serve:development",
+        "cypressConfig": "packages/invoices-app-e2e/cypress.config.ts",
+        "devServerTarget": "invoices-app:serve:development",
         "testingType": "e2e"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "invoices:serve:production"
+          "devServerTarget": "invoices-app:serve:production"
         }
       }
     },
@@ -21,10 +21,10 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/invoices-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["packages/invoices-app-e2e/**/*.{js,ts}"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["invoices"]
+  "implicitDependencies": ["invoices-app"]
 }

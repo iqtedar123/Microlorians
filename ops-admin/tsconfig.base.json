@@ -15,6 +15,7 @@
     "paths": {
       "@admin-app/*": ["packages/admin-app/src/*"],
       "@login-app/*": ["packages/login-app/src/*"],
+      "@invoices-app/*": ["packages/invoices-app/src/*"],
       "@products/*": ["packages/products/src/*"],
       "@shared/*": ["packages/shared/src/lib/*"]
     }

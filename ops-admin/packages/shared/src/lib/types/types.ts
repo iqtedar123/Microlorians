@@ -11,3 +11,22 @@ export interface ProductI {
   image: string;
   rating: RatingI;
 }
+export interface ContactDetails {
+  name: string;
+  email: string;
+  address: string;
+  phone?: number;
+}
+export interface InvoiceItem {
+  description: string;
+  price: string;
+}
+export interface InvoiceI {
+  id: string;
+  createdAt: string;
+  gst: number;
+  invoiceNumber: number;
+  from: ContactDetails;
+  customer: ContactDetails;
+  items: InvoiceItem[];
+}
