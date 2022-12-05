@@ -1,13 +1,13 @@
 import { LoginApp } from 'login-app';
 import { Products } from 'products';
 import { Invoices } from 'invoices-app';
-
 import Header from '@shared/Header/Header';
 import { initializeApp } from 'firebase/app';
 
 import { Route, Routes } from 'react-router-dom';
 import LandingPage from '@admin-app/components/landing-page/LandingPage';
 import { css, Global } from '@emotion/react';
+import '@web-components/index';
 
 const config = {
   apiKey: 'AIzaSyAykX19aNWn5w33Igy16fQv559mgM7GtEo',
@@ -45,6 +45,7 @@ export function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/invoices" element={<Invoices />} />
       </Routes>
+      <my-component-2 />
     </div>
   );
 }

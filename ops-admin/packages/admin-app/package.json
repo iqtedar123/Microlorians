@@ -9,6 +9,7 @@
   "dependencies": {
     "login-app": "*",
     "products": "*",
-    "invoices-app": "*"
+    "invoices-app": "*",
+    "web-components": "*"
   }
 }
