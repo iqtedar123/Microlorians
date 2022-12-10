@@ -1,0 +1,9 @@
+{
+  "name": "angular-micro-app",
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  },
+  "overrides": {
+    "typescript": "^4.8.3"
+  }
+}

@@ -21,8 +21,12 @@
       "@products/*": ["packages/products/src/*"],
       "@shared/*": ["packages/shared/src/lib/*"],
       "@web-components/*": ["packages/web-components/src/*"]
-    }
+    },
+    "skipLibCheck": true
   },
   "files": [],
-  "include": []
+  "include": [],
+  "exclude": [
+    "node_modules/*"
+  ]
 }

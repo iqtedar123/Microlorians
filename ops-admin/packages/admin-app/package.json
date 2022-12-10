@@ -10,6 +10,7 @@
     "login-app": "*",
     "products": "*",
     "invoices-app": "*",
-    "web-components": "*"
+    "web-components": "*",
+    "angular-micro-app": "*"
   }
 }
