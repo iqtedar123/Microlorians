@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
-import Button from '@shared/Button/Button';
-import Input from '@shared/Input/Input';
 import { useNavigate } from 'react-router-dom';
+import { signInWithGoogle } from '@shared/firebase/firebase';
 
 const styles = {
   wrapper: css({
@@ -15,14 +14,24 @@ const styles = {
 
 export const LoginApp = () => {
   const navigate = useNavigate();
-  const login = () => {
-    navigate('/products');
+  const login = async () => {
+    try {
+      const promise = await signInWithGoogle();
+      if (promise) {
+        localStorage.setItem('user', JSON.stringify(promise));
+        navigate('/products');
+      } else {
+        console.error('Error logging in');
+      }
+    } catch (e) {
+      console.error(e);
+    }
   };
   return (
     <div css={styles.wrapper}>
-      <Input type="email" label={'Email Address'} />
-      <Input type="password" label={'Password'} />
-      <Button label={'Login'} onClick={login} />
+      <button className="button" onClick={login}>
+        <i className="fab fa-google"></i>Sign in with google
+      </button>
     </div>
   );
 };

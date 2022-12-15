@@ -25,7 +25,8 @@
       "@web-components/*": ["packages/web-components/src/*"],
       "angular-elements-lib": ["packages/angular-elements-lib/src/index2.ts"]
     },
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "lib": ["DOM"]
   },
   "files": [],
   "include": [],

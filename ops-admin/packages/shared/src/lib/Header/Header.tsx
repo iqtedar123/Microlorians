@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { isSignedIn, logout } from '@shared/firebase/firebase';
 
 const styles = {
   header: css({
@@ -82,6 +83,13 @@ const Header = () => {
             </a>
           </li>
         ))}
+        {isSignedIn() && (
+          <li>
+            <a href="" onClick={() => logout()}>
+              Logout
+            </a>
+          </li>
+        )}
       </nav>
     </header>
   );
