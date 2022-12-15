@@ -1,0 +1,163 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "angular-micro-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "packages/angular-micro-app",
+      "sourceRoot": "packages/angular-micro-app/src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/packages/angular-micro-app",
+            "index": "packages/angular-micro-app/src/index.html",
+            "main": "packages/angular-micro-app/src/main.ts",
+            "tsConfig": "packages/angular-micro-app/tsconfig.app.json",
+            "assets": [
+              "packages/angular-micro-app/src/favicon.ico",
+              "packages/angular-micro-app/src/assets"
+            ],
+            "scripts": [
+            ],
+            "polyfills": "packages/angular-micro-app/src/polyfills.ts"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "packages/angular-micro-app/src/environments/environment.ts",
+                  "with": "packages/angular-micro-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angular-micro-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-micro-app:build:production"
+            },
+            "development": {
+              "browserTarget": "angular-micro-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-micro-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/angular-micro-app/tsconfig.app.json",
+              "packages/angular-micro-app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!packages/angular-micro-app/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/angular-micro-app/jest.config.js",
+            "tsConfig": "packages/angular-micro-app/tsconfig.spec.json",
+            "setupFile": "packages/angular-micro-app/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "angular-micro-app-e2e": {
+      "root": "packages/angular-micro-app-e2e",
+      "sourceRoot": "packages/angular-micro-app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "packages/angular-micro-app-e2e/cypress.json",
+            "tsConfig": "packages/angular-micro-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "angular-micro-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-micro-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "packages/angular-micro-app-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**", "!packages/angular-micro-app-e2e/**"]
+          }
+        }
+      }
+    },
+    "angular-elements-lib": {
+      "projectType": "library",
+      "root": "packages/angular-elements-lib",
+      "sourceRoot": "packages/angular-elements-lib/src",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/angular-elements-lib/tsconfig.lib.json",
+              "packages/angular-elements-lib/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!packages/angular-elements-lib/**"]
+          }
+        }
+      },
+      "schematics": {}
+    }
+  },
+  "cli": {
+    "warnings": {
+      "versionMismatch": false
+    },
+    "analytics": false
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  }
+}

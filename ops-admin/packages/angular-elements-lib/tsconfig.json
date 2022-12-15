@@ -1,7 +1,6 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "es2022",
+    "target": "es2015",
     "useDefineForClassFields": false,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -9,26 +8,23 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
+    "moduleResolution": "node"
   },
-  "files": ["src/polyfills.ts"],
-  "include": ["**/*.ts"],
+  "files": [],
+  "include": [],
   "references": [
     {
-      "path": "./tsconfig.app.json"
+      "path": "./tsconfig.lib.json"
     },
     {
       "path": "./tsconfig.spec.json"
-    },
-    {
-      "path": "./tsconfig.editor.json"
-    },
+    }
   ],
+  "extends": "../../tsconfig.base.json",
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true,
-    "disableTypeScriptVersionCheck": true
+    "strictTemplates": true
   }
 }

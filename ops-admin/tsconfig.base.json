@@ -11,6 +11,8 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
@@ -20,13 +22,12 @@
       "@nx-web/*": ["packages/nx-web/src/*"],
       "@products/*": ["packages/products/src/*"],
       "@shared/*": ["packages/shared/src/lib/*"],
-      "@web-components/*": ["packages/web-components/src/*"]
+      "@web-components/*": ["packages/web-components/src/*"],
+      "angular-elements-lib": ["packages/angular-elements-lib/src/index2.ts"]
     },
     "skipLibCheck": true
   },
   "files": [],
   "include": [],
-  "exclude": [
-    "node_modules/*"
-  ]
+  "exclude": ["node_modules/*"]
 }
