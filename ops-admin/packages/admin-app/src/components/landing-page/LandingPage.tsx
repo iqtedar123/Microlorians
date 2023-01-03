@@ -1,9 +1,9 @@
 import { css } from '@emotion/react';
 import MicroloriansImage from '../../assets/microlorians.png';
-
 import { useNavigate } from 'react-router-dom';
 import Button from '@shared/Button/Button';
 import { Breakpoints } from '@shared/utils/breakpoints';
+import { isSignedIn } from '@shared/firebase/firebase';
 
 const styles = {
   wrapper: css({
@@ -20,6 +20,7 @@ const styles = {
   }),
   title: css({
     color: 'white',
+    fontSize: '4em'
   }),
   block: css({
     display: 'block',
@@ -33,6 +34,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     gap: '5em',
+    justifyContent: 'center',
     [Breakpoints.sm]: {
       flexDirection: 'column',
     },
@@ -60,7 +62,7 @@ const LandingPage = () => {
             Each page in this application is an independent microapp part of a
             larger monorepo.
           </h2>
-          <Button label={'Login'} onClick={() => navigate('/login')} />
+          {!isSignedIn() && <Button label={'Login'} onClick={() => navigate('/login')} />}
         </div>
         <img src={MicroloriansImage} alt={'Microlorians Logo'} />
       </div>

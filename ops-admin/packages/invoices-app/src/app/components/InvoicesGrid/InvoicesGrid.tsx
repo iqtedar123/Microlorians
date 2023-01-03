@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { InvoiceI } from '@shared/types/types';
 import Invoice from '../Invoice/Invoice';
 import { css } from '@emotion/react';
+import { Breakpoints } from '@shared/utils/breakpoints';
 
 const fetchInvoices = (
   setInvoices: React.Dispatch<React.SetStateAction<InvoiceI[]>>
@@ -18,6 +19,10 @@ const styles = {
     padding: 8,
     columnGap: 8,
     rowGap: 30,
+    [Breakpoints.sm]: {
+      gridTemplateColumns: 'repeat(auto-fit, minmax(100%, 1fr))'
+
+    }
   }),
 };
 const InvoicesGrid = () => {

@@ -11,8 +11,11 @@ import PrivateRoute from './PrivateRoute';
 
 const styles = {
   wrapper: css({
-    paddingRight: 8,
   }),
+  footer: css({
+    position: 'absolute',
+    bottom: 0,
+  })
 };
 
 export function App() {
@@ -35,7 +38,9 @@ export function App() {
         </Route>
         <Route path="/invoices" element={<Invoices />} />
       </Routes>
-      <my-component-2 />
+      <footer css={styles.footer}>
+        <my-component-2 />
+      </footer>
     </div>
   );
 }

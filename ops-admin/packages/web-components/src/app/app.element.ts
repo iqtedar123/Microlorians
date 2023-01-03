@@ -6,8 +6,7 @@ export class AppElement extends HTMLElement {
     super();
   }
   connectedCallback() {
-    this.innerHTML =
-      'This text is a web component that is shared. It can be used by any app.';
+    this.innerHTML = 'Copyright 2023. Microlorians.';
   }
 }
 customElements.define('my-component-2', AppElement);

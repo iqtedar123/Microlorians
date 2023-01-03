@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import { InvoiceI } from '@shared/types/types';
+import { Breakpoints } from '@shared/utils/breakpoints';
 import InvoiceDetail from './InvoiceDetail';
 
 const styles = {
@@ -47,6 +48,9 @@ const styles = {
     display: 'flex',
     gap: 8,
     justifyContent: 'space-between',
+    [Breakpoints.sm]: {
+      flexDirection: 'column'
+    }
   }),
   contactColumn: css({
     display: 'flex',

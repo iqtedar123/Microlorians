@@ -2,6 +2,8 @@ import { css } from "@emotion/react";
 import { ProductI } from "@shared/types/types";
 import { useState } from "react";
 import { createDocument, getImageUrl, handleUpload } from '@shared/firebase/firebase';
+import Button from "@shared/Button/Button";
+import { Breakpoints } from '@shared/utils/breakpoints';
 
 const styles = {
   wrapper: css({
@@ -9,14 +11,25 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    [Breakpoints.sm]: {
+      paddingLeft: 8,
+      paddingRight: 8
+    },
     'form': {
       display: 'flex',
       flexDirection: 'column',
+      width: 500,
+      [Breakpoints.sm]: {
+        width: '100%'
+      },
+      gap: 16,
       'label': {
-        color: 'red'
+        color: 'rgb(50, 186, 246)',
+        fontSize: '1.5em',
       },
       'input': {
         height: 40,
+        width: '100%'
       }
     }
   }),
@@ -25,7 +38,9 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: 8,
-    maxWidth: 100,
+    width: '100%',
+    alignSelf: 'center',
+    marginBottom: 16
   })
 }
 const AddProduct = ({ toggleView }: { toggleView: () => void; }) => {
@@ -64,19 +79,19 @@ const AddProduct = ({ toggleView }: { toggleView: () => void; }) => {
   return <div css={styles.wrapper}>
     <form>
       <label htmlFor="title">Title</label>
-      <input type="text" name="title" value={inputs.title || ""} onChange={handleChange} />
+      <input type="text" name="title" value={inputs.title || ""} onChange={handleChange} required />
       <label htmlFor="title">Description</label>
-      <textarea name="description" value={inputs.description || ""} onChange={handleChange} />
+      <textarea name="description" value={inputs.description || ""} onChange={handleChange} required />
       <label htmlFor="title">Price</label>
       <input type="number" name="price" value={inputs.price || ""} onChange={handleChange} />
       <label htmlFor="title">Category</label>
       <input type="category" name="category" value={inputs.category || ""} onChange={handleChange} />
       <label htmlFor="title">Image</label>
-      <input type="file" name="image" accept="/image/*" onChange={saveImage} />
+      <input type="file" name="image" accept="/image/*" onChange={saveImage} required />
     </form>
     <div css={styles.buttons}>
-      <button onClick={() => saveProduct()}>Save</button>
-      <button onClick={toggleView}>Cancel</button>
+      <Button onClick={() => saveProduct()} label={'Save'} />
+      <Button onClick={toggleView} label={'Cancel'} />
     </div>
 
   </div>

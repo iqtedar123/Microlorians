@@ -4,6 +4,8 @@ import Product from '../Product/Product';
 import { css } from '@emotion/react';
 import { getDocsFromFirestore } from '@shared/firebase/firebase';
 import AddProduct from '../AddProduct/AddProduct';
+import Button from '@shared/Button/Button';
+import { Breakpoints } from '@shared/utils/breakpoints';
 
 const fetchProducts = async (
   setProducts: React.Dispatch<React.SetStateAction<ProductI[]>>
@@ -35,6 +37,14 @@ const styles = {
   wrapper: css({
     display: 'flex',
     flexDirection: 'column',
+    'button': {
+      width: '20%',
+      alignSelf: 'center',
+      marginBottom: 16,
+      [Breakpoints.sm]: {
+        width: '100%'
+      }
+    }
   })
 };
 const ProductsGrid = () => {
@@ -45,7 +55,7 @@ const ProductsGrid = () => {
   }, []);
   return (
     <div css={styles.wrapper}>
-      {!showAddProduct && <button onClick={() => setShowAddProduct(true)} >Add Product</button>}
+      {!showAddProduct && <Button onClick={() => setShowAddProduct(true)} label={'Add Product'} />}
       {!showAddProduct && products.length > 0 && <div css={styles.productsWrapper}>
         {products.map((product) => <Product key={product.id} {...product} />)}
       </div>}
