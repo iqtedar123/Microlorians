@@ -85,7 +85,7 @@ const Header = () => {
         ))}
         {isSignedIn() && (
           <li>
-            <a href="" onClick={() => logout()}>
+            <a href="" onClick={() => logout()} css={styles.inactiveLink}>
               Logout
             </a>
           </li>
