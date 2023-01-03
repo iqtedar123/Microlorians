@@ -9,7 +9,8 @@ import {
   signInWithPopup,
   signOut,
 } from 'firebase/auth';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
+import { getStorage, ref, getDownloadURL, uploadBytes } from 'firebase/storage';
 
 const config = {
   apiKey: 'AIzaSyAykX19aNWn5w33Igy16fQv559mgM7GtEo',
@@ -32,6 +33,25 @@ export const db = getFirestore(app);
 export const getDocsFromFirestore = async (collectionName) => {
   const data = await getDocs(collection(db, collectionName));
   return data;
+};
+
+const storage = getStorage(app);
+
+export const handleUpload = (file) => {
+  if (!file) {
+    alert('Please choose a file first!');
+  }
+  const storageRef = ref(storage, `/files/${file.name}`);
+  const uploadTask = uploadBytes(storageRef, file);
+  return uploadTask;
+};
+
+export const getImageUrl = async (ref) => {
+  return await getDownloadURL(ref);
+};
+
+export const createDocument = async (collectionName, data) => {
+  return await addDoc(collection(db, collectionName), data);
 };
 
 const googleProvider = new GoogleAuthProvider();

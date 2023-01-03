@@ -3,13 +3,13 @@ export interface RatingI {
   count: number;
 }
 export interface ProductI {
-  id: string | number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: RatingI;
+  id?: string | number;
+  title?: string;
+  price?: number;
+  description?: string;
+  category?: string;
+  image?: string;
+  rating?: RatingI;
 }
 export interface ContactDetails {
   name: string;
