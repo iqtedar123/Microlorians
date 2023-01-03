@@ -5,5 +5,8 @@
   "devDependencies": {},
   "scripts": {
     "build": "tsc index.ts --outDir dist"
+  },
+  "dependencies": {
+    "shared": "*"
   }
 }

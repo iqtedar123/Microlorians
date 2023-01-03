@@ -9,6 +9,7 @@ import {
   signInWithPopup,
   signOut,
 } from 'firebase/auth';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 const config = {
   apiKey: 'AIzaSyAykX19aNWn5w33Igy16fQv559mgM7GtEo',
@@ -25,6 +26,13 @@ const app = initializeApp(config);
 const auth = initializeAuth(app, {
   persistence: [indexedDBLocalPersistence, browserLocalPersistence],
 });
+
+export const db = getFirestore(app);
+
+export const getDocsFromFirestore = async (collectionName) => {
+  const data = await getDocs(collection(db, collectionName));
+  return data;
+};
 
 const googleProvider = new GoogleAuthProvider();
 

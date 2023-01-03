@@ -2,13 +2,25 @@ import { useEffect, useState } from 'react';
 import { ProductI } from '@shared/types/types';
 import Product from '../Product/Product';
 import { css } from '@emotion/react';
+import { getDocsFromFirestore } from '@shared/firebase/firebase';
 
-const fetchProducts = (
+const fetchProducts = async (
   setProducts: React.Dispatch<React.SetStateAction<ProductI[]>>
 ) => {
-  fetch('https://fakestoreapi.com/products')
-    .then((res) => res.json())
-    .then((json) => setProducts(json));
+  const querySnapshot = await getDocsFromFirestore("products");
+  const products: ProductI[] = querySnapshot.docs.map((doc) => {
+    const { title, category, description, image, price, rating } = doc.data();
+    return {
+      id: doc.id,
+      title,
+      category,
+      description,
+      image,
+      price,
+      rating
+    }
+  })
+  setProducts(products)
 };
 
 const styles = {
