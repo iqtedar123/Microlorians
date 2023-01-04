@@ -12,9 +12,9 @@ Then run the following.
 
 `npm i`
 
-`npx nx serve admin-app`
+`npx run all`
 
-Then open `localhost:4200`
+Then open `localhost:3001`
 
 
 ### Deployments

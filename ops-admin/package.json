@@ -2,7 +2,9 @@
   "name": "ops-admin",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "all": "nx run-many --parallel --target=serve --projects=admin-app,angular-micro-app"
+  },
   "private": true,
   "devDependencies": {
     "@angular-devkit/build-angular": "~15.0.0",

@@ -52,7 +52,8 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "admin-app:build",
-        "hmr": true
+        "hmr": true,
+        "port": 3001
       },
       "configurations": {
         "development": {

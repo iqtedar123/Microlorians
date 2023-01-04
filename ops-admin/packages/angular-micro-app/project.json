@@ -51,6 +51,11 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "buildTarget": "angular-micro-app:build",
+        "hmr": true,
+        "port": 3002
+      },
       "configurations": {
         "production": {
           "browserTarget": "angular-micro-app:build:production"
