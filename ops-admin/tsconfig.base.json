@@ -23,7 +23,6 @@
       "@products/*": ["packages/products/src/*"],
       "@shared/*": ["packages/shared/src/lib/*"],
       "@web-components/*": ["packages/web-components/src/*"],
-      "angular-elements-lib": ["packages/angular-elements-lib/src/index2.ts"]
     },
     "skipLibCheck": true,
     "lib": ["DOM"]

@@ -1,5 +1,3 @@
-import './app.element.scss';
-
 export class AppElement extends HTMLElement {
   constructor() {
     // Always call super first in constructor

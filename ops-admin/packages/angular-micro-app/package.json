@@ -1,5 +1,8 @@
 {
   "name": "angular-micro-app",
+  "dependencies": {
+    "web-components": "*"
+  },
   "devDependencies": {
     "typescript": "^4.8.3"
   },

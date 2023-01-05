@@ -45,7 +45,11 @@ const styles = {
   inactiveLink: css({
     fontWeight: 500,
     opacity: 0.5,
+    color: 'inherit'
   }),
+  activeLink: css({
+    color: 'black'
+  })
 };
 
 const navItems = [
@@ -83,7 +87,7 @@ const Header = () => {
       <nav css={styles.nav}>
         {navItems.map(({ name, url, key }) => (
           <li key={key}>
-            <a href={url} css={currentURL !== url ? styles.inactiveLink : ''}>
+            <a href={url} css={currentURL !== url ? styles.inactiveLink : styles.activeLink}>
               {name}
             </a>
           </li>

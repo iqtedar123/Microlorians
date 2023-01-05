@@ -6,23 +6,27 @@ import Header from '@shared/Header/Header';
 import { Route, Routes } from 'react-router-dom';
 import LandingPage from '@admin-app/components/landing-page/LandingPage';
 import { css, Global } from '@emotion/react';
-import '@web-components/index';
 import PrivateRoute from './PrivateRoute';
-
-const styles = {
-  wrapper: css({
-  }),
-  footer: css({
-    position: 'absolute',
-    bottom: 0,
-  })
-};
 
 export function App() {
   return (
-    <div css={styles.wrapper}>
+    <div>
       <Global
         styles={css`
+        html {
+          -webkit-text-size-adjust: 100%;
+          font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+            'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+            'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+          line-height: 1.5;
+          tab-size: 4;
+          scroll-behavior: smooth;
+        }
+        body {
+          font-family: inherit;
+          line-height: inherit;
+          margin: 0;
+        }
           body {
             margin: 0px;
             background-color: rgb(0, 30, 60);
@@ -38,9 +42,6 @@ export function App() {
         </Route>
         <Route path="/invoices" element={<Invoices />} />
       </Routes>
-      <footer css={styles.footer}>
-        <my-component-2 />
-      </footer>
     </div>
   );
 }

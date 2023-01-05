@@ -125,24 +125,6 @@
           }
         }
       }
-    },
-    "angular-elements-lib": {
-      "projectType": "library",
-      "root": "packages/angular-elements-lib",
-      "sourceRoot": "packages/angular-elements-lib/src",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "packages/angular-elements-lib/tsconfig.lib.json",
-              "packages/angular-elements-lib/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!packages/angular-elements-lib/**"]
-          }
-        }
-      },
-      "schematics": {}
     }
   },
   "cli": {
