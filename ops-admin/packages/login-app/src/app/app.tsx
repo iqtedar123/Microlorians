@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithGoogle } from '@shared/firebase/firebase';
 import '@web-components/index';
+import Button from '@shared/Button/Button';
 
 const styles = {
   wrapper: css({
@@ -34,9 +35,7 @@ export const LoginApp = () => {
   };
   return (
     <div css={styles.wrapper}>
-      <button className="button" onClick={login}>
-        <i className="fab fa-google"></i>Sign in with google
-      </button>
+      <Button onClick={login} label="Sign in with Google" />
       <footer css={styles.footer}>
         <my-component-2 />
       </footer>
