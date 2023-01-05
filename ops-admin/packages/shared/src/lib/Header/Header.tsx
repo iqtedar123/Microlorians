@@ -64,6 +64,11 @@ const navItems = [
     url: '/products',
     key: 'Products',
   },
+  {
+    name: 'Angular Demo',
+    url: `${window.location.protocol}//${window.document.location.hostname}:4200`,
+    key: 'AngularDemo'
+  }
 ];
 
 const Header = () => {
