@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "microlorians"
-  }
+  },
+  "targets": {
+    "microlorians": {
+      "hosting": {
+        "angular": [
+          "microlorians"
+        ],
+        "app": [
+          "microlorians"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
