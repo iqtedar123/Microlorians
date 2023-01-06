@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "all": "nx run-many --parallel --target=serve --projects=admin-app,angular-micro-app"
+    "all": "nx run-many --parallel --target=serve --projects=admin-app,angular-micro-app",
+    "build-all": "nx run-many --target=build --parallel --projects=admin-app,angular-micro-app"
   },
   "private": true,
   "devDependencies": {
