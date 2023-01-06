@@ -12,8 +12,13 @@ const styles = {
     fontSize: 18,
     textAlign: 'center',
   }),
-  image: css({
+  imageWrapper: css({
     borderRadius: 8,
+  }),
+  image: css({
+    objectFit: 'cover',
+    width: '100%',
+    height: 250,
   }),
   content: css({
     display: 'flex',
@@ -39,12 +44,11 @@ const styles = {
 const Product = (product: ProductI) => {
   return (
     <div css={styles.wrapper}>
-      <div css={styles.image}>
+      <div css={styles.imageWrapper}>
         <img
           src={product.image}
           alt={`${product.id}-title`}
-          width={'100%'}
-          height={'100%'}
+          css={styles.image}
         />
       </div>
       <div css={styles.content}>

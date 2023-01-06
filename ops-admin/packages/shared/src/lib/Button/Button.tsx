@@ -12,16 +12,22 @@ const styles = {
     paddingLeft: '1.5rem',
     paddingRight: ' 1.5rem',
     backgroundColor: 'rgb(50, 186, 246)',
-    color: 'white',
+    color: 'black',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 4
   }),
 };
 interface Props {
   label: string;
   onClick: () => void;
+  Icon?: () => React.ReactElement;
 }
-const Button = ({ label, onClick }: Props) => {
+const Button = ({ label, onClick, Icon }: Props) => {
   return (
     <button css={styles.button} onClick={onClick}>
+      {Icon && Icon()}
       {label}
     </button>
   );

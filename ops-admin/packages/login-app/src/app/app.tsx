@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { signInWithGoogle } from '@shared/firebase/firebase';
 import '@web-components/index';
 import Button from '@shared/Button/Button';
+import { FaGoogle } from 'react-icons/fa'
 
 const styles = {
   wrapper: css({
@@ -35,7 +36,7 @@ export const LoginApp = () => {
   };
   return (
     <div css={styles.wrapper}>
-      <Button onClick={login} label="Sign in with Google" />
+      <Button onClick={login} label="Google Sign in" Icon={() => <FaGoogle />} />
       <footer css={styles.footer}>
         <my-component-2 />
       </footer>

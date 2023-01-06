@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import { isSignedIn, logout } from '@shared/firebase/firebase';
+import { FaGithub } from 'react-icons/fa';
 
 const styles = {
   header: css({
@@ -26,11 +27,23 @@ const styles = {
     justifyContent: 'center',
     marginRight: 4,
   }),
+  github: css({
+    borderRadius: '50%',
+    width: '100%',
+    height: '100%',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 4,
+    color: 'black'
+  }),
   logo: css({
     display: 'flex',
     alignItems: 'center',
   }),
-  logoLink: css({}),
+  logoLink: css({
+    textDecoration: 'none'
+  }),
   nav: css({
     fontStyle: 'normal',
     fontWeight: 500,
@@ -49,6 +62,12 @@ const styles = {
   }),
   activeLink: css({
     color: 'black'
+  }),
+  leftContainer: css({
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8
   })
 };
 
@@ -79,11 +98,18 @@ const Header = () => {
   const currentURL = window.location.pathname;
   return (
     <header css={styles.header}>
-      <a css={styles.logoLink} href="/">
-        <div css={styles.logo}>
-          <div css={styles.circle}>H</div>
-        </div>
-      </a>
+      <div css={styles.leftContainer}>
+        <a href="/" css={styles.logoLink}>
+          <div css={styles.logo}>
+            <div css={styles.circle}>M</div>
+          </div>
+        </a>
+        <a href={'https://github.com/iqtedar123/Microlorians'} css={styles.logoLink} >
+          <div css={styles.logo}>
+            <div css={styles.github}><FaGithub /></div>
+          </div>
+        </a>
+      </div>
       <nav css={styles.nav}>
         {navItems.map(({ name, url, key }) => (
           <li key={key}>
