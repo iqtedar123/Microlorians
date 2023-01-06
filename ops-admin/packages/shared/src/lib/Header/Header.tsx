@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import { isSignedIn, logout } from '@shared/firebase/firebase';
 import { FaGithub } from 'react-icons/fa';
+import { useMemo } from 'react'
 
 const styles = {
   header: css({
@@ -71,7 +72,7 @@ const styles = {
   })
 };
 
-const navItems = [
+const getNavItems = (isProd: boolean) => ([
   {
     name: 'Home',
     url: '/',
@@ -89,13 +90,15 @@ const navItems = [
   },
   {
     name: 'Angular Demo',
-    url: `${window.location.protocol}//${window.document.location.hostname}:4200`,
+    url: `${window.location.protocol}//${isProd ? 'microlorians-angular.firebaseapp.com' : window.document.location.hostname + ':4200'}`,
     key: 'AngularDemo'
   }
-];
+]);
 
 const Header = () => {
   const currentURL = window.location.pathname;
+  const isProd = window.location.host.indexOf('microlorians') !== -1;
+  const navItems = useMemo(() => getNavItems(isProd), [isProd]);
   return (
     <header css={styles.header}>
       <div css={styles.leftContainer}>

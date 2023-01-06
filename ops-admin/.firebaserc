@@ -6,7 +6,7 @@
     "microlorians": {
       "hosting": {
         "angular": [
-          "microlorians"
+          "microlorians-angular"
         ],
         "app": [
           "microlorians"
