@@ -3,7 +3,6 @@ import React from 'react';
 
 const styles = {
   button: css({
-    borderRadius: 9999,
     height: 50,
     fontSize: 18,
     fontWeight: 600,
@@ -11,12 +10,14 @@ const styles = {
     paddingBottom: ' 0.75rem',
     paddingLeft: '1.5rem',
     paddingRight: ' 1.5rem',
-    backgroundColor: 'rgb(50, 186, 246)',
-    color: 'black',
+    color: 'white',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 4
+    gap: 4,
+    backgroundColor: `rgb(0, 0, 0)`,
+    border: `2px solid rgb(0, 0, 0)`,
+    borderRadius: 28
   }),
 };
 interface Props {

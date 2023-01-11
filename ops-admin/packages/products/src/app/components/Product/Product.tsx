@@ -5,9 +5,9 @@ const styles = {
   wrapper: css({
     display: 'flex',
     gap: 8,
-    backgroundColor: '#64748b',
-    border: '1px solid rgba(0, 0, 0, 0.8)',
-    borderRadius: 8,
+    backgroundColor: 'rgb(255,255,255)',
+    boxShadow: `rgb(0 0 0 / 10%) 0px 4px 10px`,
+    borderRadius: 20,
     padding: 10,
     fontSize: 18,
     textAlign: 'center',
@@ -28,7 +28,7 @@ const styles = {
     fontWeight: 600,
     fontSize: 24,
     marginBottom: 16,
-    color: 'rgb(50, 186, 246)',
+    color: 'rgb(61, 25, 82)',
   }),
   description: css({
     fontSize: 18,
