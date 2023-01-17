@@ -106,7 +106,7 @@ const Header = () => {
             <div css={styles.circle}>M</div>
           </div>
         </a>
-        <a href={'https://github.com/iqtedar123/Microlorians'} css={styles.logoLink} >
+        <a href={'https://github.com/iqtedar123/Microlorians'} css={styles.logoLink} target="_blank" rel="noreferrer" >
           <div css={styles.logo}>
             <div css={styles.github}><FaGithub /></div>
           </div>

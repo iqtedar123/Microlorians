@@ -61,6 +61,12 @@ const AddProduct = ({ toggleView }: { toggleView: () => void; }) => {
       alert('Missing title or description or image')
     } else {
       const uploadResult = await handleUpload(file);
+      if (!uploadResult) {
+        // Error uploading image
+        console.log(uploadResult)
+        alert('Error Uploading image. Try again')
+        return;
+      }
       const url = await getImageUrl(uploadResult.ref)
       console.log(url)
       const data = {

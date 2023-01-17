@@ -12,7 +12,7 @@ Then run the following.
 
 `npm i`
 
-`npx run all`
+`npm run all`
 
 Then open `localhost:3001`
 
