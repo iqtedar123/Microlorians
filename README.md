@@ -12,7 +12,7 @@ Then run the following.
 
 `npm i`
 
-`npx run all`
+`npm run all`
 
 Then open `localhost:3001`
 
@@ -22,3 +22,14 @@ Then open `localhost:3001`
 `firebase deploy`
 
 Visit https://microlorians.web.app/
+
+### Features
+- typescript
+- react
+- angular
+- Hot reload
+    - cross-app reload
+- web components
+- e2e tests
+- firebase hosting/deployment/storage
+- Github actions
