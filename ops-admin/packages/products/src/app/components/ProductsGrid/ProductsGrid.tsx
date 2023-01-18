@@ -2,28 +2,16 @@ import { useEffect, useState } from 'react';
 import { ProductI } from '@shared/types/types';
 import Product from '../Product/Product';
 import { css } from '@emotion/react';
-import { getDocsFromFirestore } from '@shared/firebase/firebase';
+import { getDocsFromFirestoreSubscribe } from '@shared/firebase/firebase';
 import AddProduct from '../AddProduct/AddProduct';
 import Button from '@shared/Button/Button';
 import { Breakpoints } from '@shared/utils/breakpoints';
 
-const fetchProducts = async (
+const fetchProducts = (
   setProducts: React.Dispatch<React.SetStateAction<ProductI[]>>
 ) => {
-  const querySnapshot = await getDocsFromFirestore("products");
-  const products: ProductI[] = querySnapshot.docs.map((doc) => {
-    const { title, category, description, image, price, rating } = doc.data();
-    return {
-      id: doc.id,
-      title,
-      category,
-      description,
-      image,
-      price,
-      rating
-    }
-  })
-  setProducts(products)
+  const unsubscribe = getDocsFromFirestoreSubscribe("products", setProducts)
+  return unsubscribe;
 };
 
 const styles = {
@@ -51,7 +39,10 @@ const ProductsGrid = () => {
   const [products, setProducts] = useState<ProductI[]>([]);
   const [showAddProduct, setShowAddProduct] = useState(false);
   useEffect(() => {
-    fetchProducts(setProducts);
+    const unsubscribe = fetchProducts(setProducts);
+    return () => {
+      unsubscribe()
+    }
   }, []);
   return (
     <div css={styles.wrapper}>

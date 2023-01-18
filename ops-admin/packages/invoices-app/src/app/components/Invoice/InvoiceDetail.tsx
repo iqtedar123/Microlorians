@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 const styles = {
   detailLabel: css({
     fontWeight: 500,
+    color: `rgb(61, 25, 82)`
   }),
   detail: css({
     border: '1px solid black',

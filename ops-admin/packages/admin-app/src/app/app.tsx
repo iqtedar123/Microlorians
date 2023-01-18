@@ -29,7 +29,7 @@ export function App() {
         }
           body {
             margin: 0px;
-            background-color: rgb(0, 30, 60);
+            background-color: rgb(247, 247, 247);
           }
         `}
       />

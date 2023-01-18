@@ -13,13 +13,13 @@ const styles = {
     marginTop: 30,
     justifyContent: 'center',
     gap: 16,
-    color: 'white',
+    color: 'black',
     [Breakpoints.sm]: {
       margin: '0 16px',
     },
   }),
   title: css({
-    color: 'white',
+    color: 'black',
     fontSize: '4em'
   }),
   block: css({

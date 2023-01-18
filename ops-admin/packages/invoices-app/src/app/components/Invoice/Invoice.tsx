@@ -9,7 +9,7 @@ const styles = {
     flexDirection: 'column',
     gap: 8,
     backgroundColor: 'white',
-    border: '1px solid rgba(0, 0, 0, 0.8)',
+    boxShadow: `rgb(0 0 0 / 10%) 0px 4px 10px`,
     borderRadius: 8,
     padding: 10,
     fontSize: 18,
@@ -43,6 +43,7 @@ const styles = {
     border: '1px solid black',
     borderRadius: 8,
     fontWeight: 600,
+    color: `rgb(61, 25, 82)`
   }),
   contactWrapper: css({
     display: 'flex',

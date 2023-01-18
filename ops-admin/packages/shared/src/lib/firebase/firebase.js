@@ -9,7 +9,13 @@ import {
   signInWithPopup,
   signOut,
 } from 'firebase/auth';
-import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  addDoc,
+  onSnapshot,
+} from 'firebase/firestore';
 import { getStorage, ref, getDownloadURL, uploadBytes } from 'firebase/storage';
 
 const config = {
@@ -35,13 +41,22 @@ export const getDocsFromFirestore = async (collectionName) => {
   return data;
 };
 
+export const getDocsFromFirestoreSubscribe = (collectionName, setDocs) => {
+  return onSnapshot(collection(db, collectionName), (snapshot) => {
+    let myDataArray = [];
+    snapshot.forEach((doc) => myDataArray.push({ ...doc.data(), id: doc.id }));
+    setDocs(myDataArray);
+  });
+};
+
 const storage = getStorage(app);
 
 export const handleUpload = (file) => {
   if (!file) {
     alert('Please choose a file first!');
   }
-  const storageRef = ref(storage, `/files/${file.name}`);
+  const date = new Date();
+  const storageRef = ref(storage, `/files/${date.getTime()}-${file.name}`);
   const uploadTask = uploadBytes(storageRef, file);
   return uploadTask;
 };

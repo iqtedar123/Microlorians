@@ -1,5 +1,22 @@
 {
-  "hosting": {
+  "hosting": [
+  {
+    "target": "angular",
+    "public": "dist/packages/angular-micro-app",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**/angular-micro-app/**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  {
+    "target": "app",
     "public": "dist/packages/admin-app",
     "ignore": [
       "firebase.json",
@@ -12,5 +29,5 @@
         "destination": "/index.html"
       }
     ]
-  }
+}]
 }

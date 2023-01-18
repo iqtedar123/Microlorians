@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import { isSignedIn, logout } from '@shared/firebase/firebase';
 import { FaGithub } from 'react-icons/fa';
+import { useMemo } from 'react'
 
 const styles = {
   header: css({
@@ -8,14 +9,13 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     position: 'relative',
-    backgroundColor: '#64748b',
     zIndex: 3000,
     height: 75,
     width: '100%',
     paddingRight: 8,
-    borderBottomLeftRadius: 8,
-    borderBottomRightRadius: 8,
     marginBottom: 16,
+    backgroundColor: 'rgb(255,255,255)',
+    borderBottom: `4px solid rgb(61, 25, 82)`
   }),
   circle: css({
     borderRadius: '50%',
@@ -71,7 +71,7 @@ const styles = {
   })
 };
 
-const navItems = [
+const getNavItems = (isProd: boolean) => ([
   {
     name: 'Home',
     url: '/',
@@ -89,13 +89,15 @@ const navItems = [
   },
   {
     name: 'Angular Demo',
-    url: `${window.location.protocol}//${window.document.location.hostname}:4200`,
+    url: `${window.location.protocol}//${isProd ? 'microlorians-angular.firebaseapp.com' : window.document.location.hostname + ':4200'}`,
     key: 'AngularDemo'
   }
-];
+]);
 
 const Header = () => {
   const currentURL = window.location.pathname;
+  const isProd = window.location.host.indexOf('microlorians') !== -1;
+  const navItems = useMemo(() => getNavItems(isProd), [isProd]);
   return (
     <header css={styles.header}>
       <div css={styles.leftContainer}>
@@ -104,7 +106,7 @@ const Header = () => {
             <div css={styles.circle}>M</div>
           </div>
         </a>
-        <a href={'https://github.com/iqtedar123/Microlorians'} css={styles.logoLink} >
+        <a href={'https://github.com/iqtedar123/Microlorians'} css={styles.logoLink} target="_blank" rel="noreferrer" >
           <div css={styles.logo}>
             <div css={styles.github}><FaGithub /></div>
           </div>
